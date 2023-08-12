@@ -1,0 +1,16 @@
+@import "../../../assets/scss/base.scss";
+
+.upload_file {
+    border-radius: 8px;
+    padding: 10px 10px;
+    color: $white-color;
+    background-color: rgb(187, 37, 37);
+    cursor: pointer;
+}
+
+.action-upload {
+    width: 50px;
+    span {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,8 @@
+@import "../../../Assets/scss/base";
+
+.read-more-btn {
+    --bs-text-opacity: 1;
+    color: rgba($primary-color, var(--bs-text-opacity)) !important;
+    cursor: pointer;
+    text-decoration: underline;
+}

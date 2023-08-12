@@ -1,0 +1,23 @@
+export const START_LOADER = "START_LOADER"
+export const STOP_LOADER = "STOP_LOADER"
+
+export const LOGIN = "LOGIN"
+export const SET_USER_DATA = "SET_USER_DATA"
+export const SIGN_UP = "SIGN_UP"
+export const UPDATED_TOKEN = "UPDATED_TOKEN"
+export const GET_USER_RECIPE_DATA =  "GET_USER_RECIPE_DATA"
+export const GET_TEST_API_DATA = "GET_TEST_API_DATA"
+export const GET_RECIPES = "GET_RECIPES"
+export const SET_RECIPES = "SET_RECIPES"
+export const ADD_RECIPE = "ADD_RECIPE"
+export const EDIT_RECIPE = "EDIT_RECIPE"
+export const DELETE_RECIPE = "DELETE_RECIPE"
+
+export const GET_CATEGORY = "GET_CATEGORY"
+export const SET_CATEGORY = "SET_CATEGORY"
+export const GET_RECIPE_BY_ID = "GET_RECIPE_BY_ID"
+
+export const GET_RECIPE_COMMENT = "GET_RECIPE_COMMENT"
+
+export const RECIPE_UPLOAD_IMAGE = "RECIPE_UPLOAD_IMAGE"
+

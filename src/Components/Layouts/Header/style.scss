@@ -1,0 +1,84 @@
+$primary-color: #333333;
+$header-height: 60px;
+$breakpoint-medium: 768px;
+ 
+.offcanvas.offcanvas-end {
+    width: 285px !important;
+    border-radius: 8px;
+    background: #EDE7F6;
+}
+
+.custom-toggle{
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+header {
+
+    nav {
+        .logo {
+            cursor: pointer;
+        }
+        .main-right-navbar {        
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                .item-link {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    @media (max-width:991px) {
+                        padding: 5px 0;
+                        text-align: center;
+                        &:last-child {
+                            padding-bottom: 15px;
+                        }
+
+                    }
+                    .link {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        color: rgba(rgb(10, 77, 10), 0.5);
+                        font-size: 20px;
+                        line-height: 1.3;
+                        font-weight: 500;
+                        cursor: pointer;
+                        position: relative;
+                        padding-bottom: 5px;
+                        &::after {
+                            position: absolute;
+                            content: "";
+                            left: 0;
+                            bottom: 0;
+                            height: 3px;
+                            width: 0;
+                            transition: width 0.5s ease-in-out;
+                        }
+                        &:hover::after {
+                                width: 100%;
+                                background: red;                       
+                        }
+                        &:active::after {
+                            width: 100%;
+                            background: red;                       
+                    }
+                        &.navbar-expand-lg {
+                            .navbar-toggler {
+                               &-icon {
+                                    background-image: none;
+                                }
+                               
+                            }
+                        }
+                    }
+                   
+                    
+                }
+                
+            }
+        }
+    }
+
+   
+}

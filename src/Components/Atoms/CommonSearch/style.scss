@@ -1,0 +1,130 @@
+.search-class-container {
+    background-color: #c1b8b8;
+    border-radius: 20px;
+    padding: 1rem 1.2rem;
+    min-height: 50px;
+    border: 1px solid rgb(151, 149, 149);
+    position: relative;
+    .my-input {
+        border: none;
+        background: #c1b8b8!important;
+        padding: 0 70px 0 30px;
+
+        width: 90%;
+        &:focus {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+        &::placeholder {
+            font-size: 1.2rem; /* Set the desired font size */
+    
+        }    
+    }
+    .image-em{
+
+        position: absolute;;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        &.search-icon {
+            left: 1rem;
+        }
+        &.filter-class {
+            cursor: pointer;
+            right: 1rem;
+        }
+        .filter-icon {
+            margin-left: 10px;
+        }
+    }
+}
+
+.sam-offcanvas-filter {
+    .offcanvas {
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    .lays-chips {
+        .my-chip-class {
+            .chip-data {
+                padding: 8px;
+                background-color: #fff;
+                border-radius: 15px;
+                border: 1px solid pink;
+                font-size: 14px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.19) !important;
+                cursor: pointer;
+            }
+            .active {
+                background-color: rgb(120, 120, 172);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.offcanvas-filter {
+    scrollbar-width: thin;
+    &.show {
+        margin:0px auto;
+        border-radius: 0 0 30px 30px;
+        padding: 0 30px;
+        @media (max-width:1199px) {
+            padding: 0 ;
+            padding-bottom: 30px;
+          
+        }
+        @media (max-width:767px) {
+            min-height: 55vh;
+        }
+        @media (min-width: 576px) {
+            max-width: 540px;
+        }
+        @media (min-width: 768px) {
+            max-width: 720px;
+        }
+        @media (min-width: 992px) {
+            max-width: 960px;
+        }
+        @media (min-width: 1200px)
+        {
+             max-width: 1140px;
+         }
+        @media (min-width: 1400px) {
+          max-width: 1300px;
+        }
+        .offcanvas-body  {
+            scrollbar-width: thin;
+        }
+        
+    }
+    .btn-close {
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 35px;
+        min-height: 35px;
+        box-shadow: 0px -8px 40px rgba(0, 0, 0, 0.19) !important;
+        background: #fff;
+        border-radius: 8px;
+        opacity: 1;
+        z-index: 1;
+        svg {
+            path {
+                fill: #000;
+            }
+        }
+        &:hover {
+            background-color: red;
+            svg {
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
