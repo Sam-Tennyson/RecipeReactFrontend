@@ -8,9 +8,10 @@ import dashboardSvg from "../assets/Images/dashboard.svg"
 import logoutSvg from "../assets/Images/logout.svg"
 import listSvg from "../assets/Images/list.svg"
 import userSvg from "../assets/Images/user.svg"
+import aboutUs from "../assets/Images/about-us.svg"
 
 export const Images = {
     recipeImage,recipeBannerImage,
-    logoImage, searchSvg, filterEditSvg,
+    logoImage, searchSvg, filterEditSvg, aboutUs,
     addSvg, dashboardSvg, listSvg, userSvg, logoutSvg 
 } 

@@ -26,6 +26,7 @@ aside {
                 cursor: pointer;
                 position: relative;
                 padding-bottom: 5px;
+               
                 &::after {
                     position: absolute;
                     content: "";
@@ -39,10 +40,10 @@ aside {
                     width: 100%;
                     background: #FFF;
                 }
-                &:active::after {
-                    width: 100%;
-                    background: #FFF;                       
-                }
+            }
+            &.active::after {
+                width: 100%;
+                background: #8150ca;                       
             }
         }
     }

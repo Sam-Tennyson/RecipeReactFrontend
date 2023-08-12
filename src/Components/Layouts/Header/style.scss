@@ -59,7 +59,7 @@ header {
                                 width: 100%;
                                 background: red;                       
                         }
-                        &:active::after {
+                        &.active::after {
                             width: 100%;
                             background: red;                       
                     }

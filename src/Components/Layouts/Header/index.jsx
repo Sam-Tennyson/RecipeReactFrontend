@@ -8,7 +8,7 @@ import { getCategory } from '../../../Redux/Actions/Recipe';
 
 // routes
 import { ROUTE_CONSTANTS } from '../../../Shared/Routes';
-import { HEADER_TAB, STRINGS } from "../../../Shared/Constants"
+import { HEADER_TAB, LABELS, RIGHT_ACTION, STRINGS } from "../../../Shared/Constants"
 
 // constants
 import { Images } from '../../../Shared/Images';
@@ -18,6 +18,7 @@ import RightSideAction from '../../Atoms/RightSideAction';
 
 // styles
 import "./style.scss"
+import { setHeaderRoute } from '../../../Redux/Actions/Loader';
 
 const Header = () => {
 
@@ -27,11 +28,14 @@ const Header = () => {
 
 	const token = useSelector((state) => state.auth.token);
 	const profileReducer = useSelector((state) => state.auth.user_data);
+	const header_route = useSelector((state) => state.loading.header_route);
 
 	const [hamburger, setShowHamburger] = useState(false);
 	const [showSidePopup, setShowSidePopup] = useState(false);
+	const [sideBarData, setSideBarData] =  useState([])
 
 	const handleClick = (data) => {
+		dispatch(setHeaderRoute(data?.path))
 		if (hamburger) setShowHamburger(false)
 		navigate({
 			pathname: data?.path
@@ -45,6 +49,19 @@ const Header = () => {
 
 	const fetchCategoryList = () => dispatch(getCategory())
 
+	const handleSideOptions = () => {
+		let data = []
+		if (token) {
+			let no_data = [LABELS.LOGIN, LABELS.SIGNUP]
+			data = RIGHT_ACTION.filter((item) => !no_data.includes(item?.label))
+			setSideBarData(data)
+		} else {
+			let no_data = [LABELS.MY_RECIPE, LABELS.ADD_RECIPE, LABELS.LOGOUT]
+			data = RIGHT_ACTION.filter((item) => !no_data.includes(item?.label))
+			setSideBarData(data)
+		}
+	}
+
 	useEffect(() => {
 		if (profileReducer) {
 
@@ -53,9 +70,11 @@ const Header = () => {
 	}, [profileReducer])
 
 	useEffect(() => {
+		handleSideOptions()
 		fetchCategoryList()
 	}, [])
 
+	console.log(sideBarData);
 
 	return (
 		<>
@@ -66,23 +85,31 @@ const Header = () => {
 				aria-labelledby="offcanvasRightLabel"
 			>
 				<div className="offcanvas-header mb-0">
-					<h5 id="offcanvasRightLabel">{profileReducer?.name}</h5>
+					<h5 id="offcanvasRightLabel">{token?profileReducer?.name :LABELS.MENU}</h5>
 					<button type="button" className="btn-close text-reset" onClick={() => setShowSidePopup((prev) => !prev)}></button>
 				</div>
-				<hr className='mb-1 pb-0' />
+					<hr className='mb-1 pb-0' />
 				<div className="offcanvas-body p-0">
-					<RightSideAction closeModal={() => setShowSidePopup((prev) => !prev)} />
+					<RightSideAction 
+						right_bar_options={sideBarData}
+						closeModal={() => setShowSidePopup((prev) => !prev)} 
+					/>
 				</div>
 			</div>
 			{showSidePopup ? <div className="offcanvas-backdrop fade show"></div> : null}
 			<header>
 				<nav className='navbar navbar-expand-lg d-flex align-items-center justify-content-between container'>
 					<div className='navbar-brand logo'>
-						<img src={Images?.logoImage} alt="logo_image" className="d-inline-block" width="50" onClick={() => navigate(ROUTE_CONSTANTS?.DASHBOARD)} />
+						<img src={Images?.logoImage} alt="logo_image" className="d-inline-block" width="50" onClick={() => {
+							dispatch(setHeaderRoute(ROUTE_CONSTANTS?.DASHBOARD))
+							navigate(ROUTE_CONSTANTS?.DASHBOARD)
+						}} />
 					</div>
 					<button className="navbar-toggler custom-toggle"
-						onClick={() => setShowHamburger((prev) => !prev)}
-						type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+						// onClick={() => setShowHamburger((prev) => !prev)}
+						onClick={() => setShowSidePopup((prev) => !prev)}
+						type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					>
 						<span className="navbar-toggler-icon">
 							<svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
@@ -126,7 +153,7 @@ const Header = () => {
 								</>) : (
 								<li className='item-link'>
 									<span className='link'
-										onClick = {handleProfileClick}
+										onClick={handleProfileClick}
 									>Your Profile</span>
 								</li>
 							)}
