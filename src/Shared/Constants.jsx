@@ -88,6 +88,10 @@ export const STRINGS = {
 }
 
 export const LABELS = {
+    MENU: "Menu",
+    LOGIN: "Login",
+    SIGNUP: "Signup",
+    ABOUT_US: "About Us",
     DASHBOARD: "Dashboard",
     SUBMIT: "Submit",
     EDIT_CAUSE: "Edit Cause",
@@ -183,6 +187,26 @@ export const RIGHT_ACTION = [
         icon: Images?.addSvg,
         path: ROUTE_CONSTANTS?.ADD_RECIPE
     },
+    {
+        label: LABELS?.ABOUT_US,
+        value: "3",
+        icon: Images?.addSvg,
+        path: ROUTE_CONSTANTS?.ABOUT_US
+    },
+    {
+        label: LABELS?.LOGIN,
+        value: "3",
+        icon: Images?.addSvg,
+        path: ROUTE_CONSTANTS.LOGIN
+    },
+    
+    {
+        label: LABELS?.SIGNUP,
+        value: "3",
+        icon: Images?.addSvg,
+        path: ROUTE_CONSTANTS?.SIGNUP
+    },
+    
     {
         label: LABELS?.LOGOUT,
         value: "4",

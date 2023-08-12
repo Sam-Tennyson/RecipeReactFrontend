@@ -23,6 +23,15 @@ const validationSchema = Yup.object({
     .matches(/^\+?[1-9]\d{1,14}$/, "Invalid phone number"),
 });
 
+const CONSTANTS_STRINGS = {
+	PLACEHOLDER: {
+		EMAIL: "Enter email",
+		PASSWORD: "Enter password",
+    USERNAME: "Enter username",
+    PHONE: "Enter phone number"
+	}
+}
+
 const Signup = () => {
 
   const navigate = useNavigate();
@@ -90,6 +99,7 @@ const Signup = () => {
                       <TextField
                         name={"user_name"}
                         type={"text"}
+                        placeholder={CONSTANTS_STRINGS.PLACEHOLDER.USERNAME}
                       />
                     </div>
                     
@@ -99,6 +109,7 @@ const Signup = () => {
                       <TextField
                         name={"email"}
                         type={"text"}
+                        placeholder={CONSTANTS_STRINGS.PLACEHOLDER.EMAIL}
                       />
                     </div>
                     <div className="col-12 my-2 border-radius-form">
@@ -122,6 +133,7 @@ const Signup = () => {
                       <TextField
                         name={"phone"}
                         type={"text"}
+                        placeholder={CONSTANTS_STRINGS.PLACEHOLDER.PHONE}
                       />
                     </div>
                     <div className="d-flex justify-content-start align-items-center mb-2">
