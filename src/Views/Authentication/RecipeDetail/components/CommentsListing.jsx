@@ -44,7 +44,7 @@ const CommentsListing = ({ data }) => {
             <div className='row my-3'>
                 {data?.map((item, ind) => {
                     return (
-                        <div className="col-4 my-2" key={item?._id}>
+                        <div className="col-sm-6 col-md-4 col-lg-3 my-2" key={item?._id}>
                             <div className='border  h-100 card p-3' >
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5>{item?.user_id?.name}</h5>
