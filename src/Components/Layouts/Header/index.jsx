@@ -28,8 +28,7 @@ const Header = () => {
 
 	const token = useSelector((state) => state.auth.token);
 	const profileReducer = useSelector((state) => state.auth.user_data);
-	const header_route = useSelector((state) => state.loading.header_route);
-
+	
 	const [hamburger, setShowHamburger] = useState(false);
 	const [showSidePopup, setShowSidePopup] = useState(false);
 	const [sideBarData, setSideBarData] =  useState([])

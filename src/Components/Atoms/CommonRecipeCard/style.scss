@@ -1,4 +1,8 @@
 .parentCard {
+    .load_image {
+        min-height: 200px;
+        max-height: 200px;
+    }
     img {
         cursor: pointer;
         min-height: 200px;
