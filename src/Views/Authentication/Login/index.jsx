@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../../Redux/Actions/Auth";
 import { useSnackbar } from "notistack";
 import { successSnackbar, errorSnackbar } from "../../../Shared/Utilities"
+import Snackbar from "../../../Shared/Snackbar";
 
 const CONSTANTS_STRINGS = {
 	PLACEHOLDER: {
@@ -47,11 +48,11 @@ const Login = () => {
 				formData: formData,
 				success: () => {
 					let msg = RESPONSE.RECIPE_ADDEE_SUCCESS;
-					enqueueSnackbar(msg, successSnackbar);
+					Snackbar.success(msg);
 				},
 				fail: (errMsg) => {
 					let err = errMsg || ERROR_MESSAGE.SOMETHING_WENT_WRONG;
-					enqueueSnackbar(err, errorSnackbar);
+					Snackbar.error(err);
 				},
 			})
 		);

@@ -21,27 +21,22 @@ export const SIDEBAR_CONSTANT = [
     {
         path: ROUTE_CONSTANTS.ARCADE_GAME,
         name: "Arcade Game",
-        // image: <ChangeCircleIcon />
     },
     {
         path: ROUTE_CONSTANTS.LEARN_PAYMENT,
         name: "Integrate Payment",
-        // image: <ChangeCircleIcon />
     },
     {
         path: ROUTE_CONSTANTS.CHAT,
         name: "Chat app",
-        // image: <ChangeCircleIcon />
     },
     {
         path: ROUTE_CONSTANTS.MY_GPAY_PAYMENT,
         name: "Gpay Payment",
-        // image: <ChangeCircleIcon />
     },
     {
         path: ROUTE_CONSTANTS.MY_RAZORPAY_PAYMENT,
         name: "Gpay Payment123",
-        // image: <ChangeCircleIcon />
     },
 ]
 
@@ -88,6 +83,7 @@ export const STRINGS = {
 }
 
 export const LABELS = {
+    COMMENT: "Comment",
     MENU: "Menu",
     LOGIN: "Login",
     SIGNUP: "Signup",
@@ -116,6 +112,7 @@ export const ERROR_MESSAGE = {
 
 export const RESPONSE = {
     RECIPE_ADDEE_SUCCESS: "Your recipe has been added",
+    RECIPE_COMMENT_ADDEE_SUCCESS: "Your comment has been added",
     SUCCESS_LOGIN: "Successfully Login",
     SUCCESS_REGISTER: "Successfully Registered",
     SUCCESS_ADDED_CAUSE: "New cause added successfully",
