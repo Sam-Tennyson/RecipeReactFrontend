@@ -22,6 +22,7 @@ const Dashboard = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
+	const oneTimeCall = useRef(false)
 	const rowPerPageRef = useRef(STRING_NUMBER?.TWELVE)
 	const currentPageRef = useRef(STRING_NUMBER?.ZERO)
 	const limitRef = useRef(STRING_NUMBER?.TWELVE)
@@ -31,9 +32,11 @@ const Dashboard = () => {
 	const recipeDataRedCount = useSelector((state) => state?.recipe?.recipe_data?.totalCount)
 
 	const [categoryData, setCategoryData] = useState([])
+	const [search, setSearch] = useState("")
 
 	const getRecipeData = () => {
 		dispatch(getRecipe({
+			searchKey: search,
 			category: { category: categoryData },
 			limit: limitRef.current,
 			skip: skipRef.current,
@@ -57,18 +60,30 @@ const Dashboard = () => {
 	}
 
 	useEffect(() => {
-		if (categoryData) {
+		if (oneTimeCall.current){
+			let time_rec = setTimeout(() =>{
+				getRecipeData()
+			}, 500)	
+			return () => clearTimeout(time_rec)
+		}
+	}, [search])
+
+	useEffect(() => {
+		if (categoryData&& oneTimeCall.current) {
 			getRecipeData()
 		}
 	}, [categoryData])
 
 	useEffect(() => {
+		oneTimeCall.current = true
 		getRecipeData()
 	}, [])
 
 	return (
 		<>
 			<CommonSearch
+				setSearch={setSearch}
+				search={search}
 				categoryData={categoryData}
 				setCategoryData={setCategoryData}
 			/>

@@ -18,22 +18,22 @@ import { SnackbarProvider } from "notistack";
 function App() {
 
 	return (
-    <Provider store={store}>
-        <SnackbarProvider
-          anchorOrigin={{
-			vertical: "top",
-            horizontal: "center",
-          }}
-          maxSnack={3}
-        >
-			<SnackbarUtilConfig />
-          	<Loader />
-            <PersistGate persistor={persistor}>
-				<RootRouter />
-			</PersistGate>
-        </SnackbarProvider>
-    </Provider>
-  );
+		<Provider store={store}>
+			<SnackbarProvider
+				anchorOrigin={{
+					vertical: "top",
+					horizontal: "center",
+				}}
+				maxSnack={3}
+			>
+				<SnackbarUtilConfig />
+				<Loader />
+				<PersistGate persistor={persistor}>
+					<RootRouter />
+				</PersistGate>
+			</SnackbarProvider>
+		</Provider>
+	);
 }
 
 export default App;

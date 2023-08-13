@@ -10,7 +10,7 @@ function* getRecipeRequest({payload}) {
     try {
         yield put(startLoader())
         const {data, status} = yield postRequestNoAuth({
-            API: API.RECIPE+`?limit=${payload.limit}&skip=${payload.skip}`,
+            API: API.RECIPE+`?limit=${payload.limit}&skip=${payload.skip}&searchKey=${payload?.searchKey}`,
             DATA: payload?.category,
         })
         if (status === STATUS_CODE?.SUCCESS_200) {

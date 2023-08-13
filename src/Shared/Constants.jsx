@@ -83,6 +83,7 @@ export const STRINGS = {
 }
 
 export const LABELS = {
+    FILTER: "Filter",
     COMMENT: "Comment",
     MENU: "Menu",
     LOGIN: "Login",
