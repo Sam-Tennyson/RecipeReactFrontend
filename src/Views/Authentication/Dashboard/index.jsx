@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { enqueueSnackbar } from 'notistack'
+import { useNavigate } from "react-router-dom"
 
 // components
 import CommonRecipeCard from "../../../Components/Atoms/CommonRecipeCard"
@@ -15,24 +16,24 @@ import { getRecipe } from '../../../Redux/Actions/Recipe'
 import { ERROR_MESSAGE, STRING_NUMBER } from '../../../Shared/Constants'
 import { errorSnackbar } from "../../../Shared/Utilities"
 import { ROUTE_CONSTANTS } from "../../../Shared/Routes"
-import { useNavigate } from "react-router-dom"
+import ReactRecipeSkelton from '../../../Components/Atoms/ReactRecipeSkelton'
 
 const Dashboard = () => {
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const oneTimeCall = useRef(false)
-	const rowPerPageRef = useRef(STRING_NUMBER?.TWELVE)
-	const currentPageRef = useRef(STRING_NUMBER?.ZERO)
-	const limitRef = useRef(STRING_NUMBER?.TWELVE)
-	const skipRef = useRef(STRING_NUMBER?.ZERO)
+	const oneTimeCall = useRef(false);
+	const skipRef = useRef(STRING_NUMBER?.ZERO);
+	const limitRef = useRef(STRING_NUMBER?.TWELVE);
+	const currentPageRef = useRef(STRING_NUMBER?.ZERO);
+	const rowPerPageRef = useRef(STRING_NUMBER?.TWELVE);
 
-	const recipeDataRed = useSelector((state) => state?.recipe?.recipe_data?.recipeData)
-	const recipeDataRedCount = useSelector((state) => state?.recipe?.recipe_data?.totalCount)
+	const recipeDataRed = useSelector((state) => state?.recipe?.recipe_data?.recipeData);
+	const recipeDataRedCount = useSelector((state) => state?.recipe?.recipe_data?.totalCount);
 
-	const [categoryData, setCategoryData] = useState([])
-	const [search, setSearch] = useState("")
+	const [search, setSearch] = useState("");
+	const [categoryData, setCategoryData] = useState([]);
 
 	const getRecipeData = () => {
 		dispatch(getRecipe({
@@ -89,14 +90,13 @@ const Dashboard = () => {
 			/>
 			<div className="row my-3">
 				{recipeDataRed?.map((recipe, index) => (
-					<div className='my-2 col-sm-6 col-md-4 col-lg-3' key={recipe?._id}>
+					<div className='my-2 col-sm-6 col-md-6 col-lg-4' key={recipe?._id}>
 						<CommonRecipeCard
 							data={recipe}
 							handleClick={() => handleClick(recipe)}
 						/>
 					</div>
 				))}
-
 				{recipeDataRedCount ? (
 					<ReactPagination
 						rowsPerPage={rowPerPageRef.current}
@@ -104,8 +104,9 @@ const Dashboard = () => {
 						totalCount={recipeDataRedCount}
 						onPageChange={handlePageClick}
 					/>
-				) : (<div className="error text-center">{ERROR_MESSAGE.NO_DATA_FOUND}</div>)}
-
+				) : (
+					<ReactRecipeSkelton />
+				)}
 			</div>
 		</>
 	)

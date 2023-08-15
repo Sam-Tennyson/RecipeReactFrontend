@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-loader-spinner": "^5.3.4",
+    "react-loading-skeleton": "^3.3.1",
     "react-modal": "^3.16.1",
     "react-paginate": "^8.2.0",
     "react-redux": "^8.0.5",

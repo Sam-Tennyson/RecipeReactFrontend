@@ -14,6 +14,7 @@ import { SnackbarUtilConfig } from "./Shared/Snackbar";
 
 // libs
 import { SnackbarProvider } from "notistack";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 function App() {
 
@@ -26,11 +27,13 @@ function App() {
 				}}
 				maxSnack={3}
 			>
-				<SnackbarUtilConfig />
-				<Loader />
-				<PersistGate persistor={persistor}>
-					<RootRouter />
-				</PersistGate>
+				<SkeletonTheme baseColor="" highlightColor="#f1dde2">
+					<SnackbarUtilConfig />
+					<Loader />
+					<PersistGate persistor={persistor}>
+						<RootRouter />
+					</PersistGate>
+				</SkeletonTheme>
 			</SnackbarProvider>
 		</Provider>
 	);
