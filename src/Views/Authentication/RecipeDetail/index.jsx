@@ -60,17 +60,19 @@ const RecipeDetail = () => {
             </div>
 
             {recipeData?.image ? (
-                <div className="col-md-3 mb-3">
+                <div className="col-12 mb-3">
                     <div className='card21'>
-                        <div className="card-body">
-                            <img src={recipeData?.image} alt="iamge_Data" width={"100%"} />
+                        <div className="card-body detail-recipe">
+                            <em>
+                                <img src={recipeData?.image} alt="iamge_Data"  />
+                            </em>
                         </div>
                     </div>
                 </div>
             ): null}
 
-            <div className=" col-md-9 mb-3">
-                <div className='card h-100'>
+            <div className=" col-12 mb-3">
+                <div className='card '>
                     <div className='card-header'>Description</div>
                     <div className="card-body">
                         <ReadMore 

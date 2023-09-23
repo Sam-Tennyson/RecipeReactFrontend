@@ -1,11 +1,25 @@
 @import "../../assets/scss/base.scss";
 
+body::-webkit-scrollbar {
+	width: 0.4em;
+}
+   
+body::-webkit-scrollbar-track {
+	// box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: $red-color;
+	border-radius: 18px;
+	// outline: 1px solid slategrey;
+}
+
 body {
 	font-size: $body-font-size;
 }
 
 .card {
-	background-color: rgb(175, 218, 176);
+	box-shadow: 0 3px 3px $red-color;
 }
 
 .link-class {
@@ -258,7 +272,7 @@ textarea.form-control-lg {
 
 .commonBox {
 	color: grey;
-	background: #000;
+	background: #7f0000;
 	border-radius: 0.375rem;
 	width: 75%;
 	margin: auto;
@@ -275,30 +289,6 @@ textarea.form-control-lg {
 
 		p {
 			font-size: 0.8rem;
-		}
-
-		.image-container {
-			position: relative;
-			// overflow: hidden;
-		}
-
-		.image-container img {
-			width: 100%;
-			height: 100%;
-			animation: upDownAnimation 2s ease-in-out infinite;
-		}
-
-		@keyframes upDownAnimation {
-
-			0%,
-			100% {
-				transform: translateY(0);
-			}
-
-			50% {
-				transform: translateY(-20px);
-				/* Adjust the distance the image moves */
-			}
 		}
 	}
 

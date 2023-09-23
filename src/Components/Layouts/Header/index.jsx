@@ -96,10 +96,10 @@ const Header = () => {
 				</div>
 			</div>
 			{showSidePopup ? <div className="offcanvas-backdrop fade show"></div> : null}
-			<header>
+			<header className='px-2'>
 				<nav className='navbar navbar-expand-lg d-flex align-items-center justify-content-between container'>
 					<div className='navbar-brand logo'>
-						<img src={Images?.logoImage} alt="logo_image" className="d-inline-block" width="50" onClick={() => {
+						<img src={Images?.recipe_logo} alt="logo_image" className="d-inline-block" width="50" onClick={() => {
 							dispatch(setHeaderRoute(ROUTE_CONSTANTS?.DASHBOARD))
 							navigate(ROUTE_CONSTANTS?.DASHBOARD)
 						}} />
