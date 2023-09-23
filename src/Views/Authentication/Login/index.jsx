@@ -60,13 +60,13 @@ const Login = () => {
 
 	return (
 		<>
-			<div className="mt-4 commonBox d-flex justify-content-center align-items-center">
-				<div className="mainBox my-4 p-4 w-100">
+			<div className=" commonBox d-flex justify-content-center align-items-center">
+				<div className="mainBox w-100">
 					<div className="row my-2">
-						<div className="col-md-6 my-2 ">
+						<div className="col-lg-6 col-md-6 col-sm-6 my-2 ">
 							<LeftSectionImage />
 						</div>
-						<div className="col-md-6 ">
+						<div className="col-lg-6 col-md-6 col-sm-6 p-0">
 							<h3 className="heading_title">{STRINGS?.LOGIN} </h3>
 
 							<Formik
