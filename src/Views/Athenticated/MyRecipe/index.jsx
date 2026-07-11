@@ -118,7 +118,7 @@ const MyRecipe = () => {
 			/>
     		<div className="row my-3">
 				{recipeData.data?.map((recipe, index) => (
-					<div className='my-2 col-sm-6 col-md-4 col-lg-3' key={recipe?._id}>
+					<div className='my-2 col-sm-6 col-md-6 col-lg-4' key={recipe?._id}>
 					<CommonRecipeCard
 						isMyRecipe = {true}
 						data={recipe}

@@ -1,7 +1,21 @@
 .parentCard {
+    .load_image {
+        min-height: 200px;
+        max-height: 200px;
+    }
     img {
         cursor: pointer;
         min-height: 200px;
         max-height: 200px;
+        object-fit: cover;
+    }
+    .category-container {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: #e91111 ;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 }

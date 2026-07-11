@@ -1,4 +1,4 @@
-import { ADD_RECIPE, DELETE_RECIPE, EDIT_RECIPE, GET_CATEGORY, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_COMMENT, GET_USER_RECIPE_DATA, RECIPE_UPLOAD_IMAGE, SET_CATEGORY, SET_RECIPES } from "./ActionType"
+import { ADD_RECIPE, ADD_RECIPE_COMMENT, DELETE_RECIPE, DELETE_RECIPE_COMMENT, EDIT_RECIPE, EDIT_RECIPE_COMMENT, GET_CATEGORY, GET_RECIPES, GET_RECIPE_BY_ID, GET_RECIPE_COMMENT, GET_USER_RECIPE_DATA, RECIPE_UPLOAD_IMAGE, SET_CATEGORY, SET_RECIPES } from "./ActionType"
 
 export const getRecipe = (payload) => {
 
@@ -75,6 +75,27 @@ export const getRecipeComment = (payload) => {
 export const recipeImageUpload = (payload) => {
     return {
         type: RECIPE_UPLOAD_IMAGE,
+        payload
+    }
+}
+
+export const addRecipeComment = (payload) => {
+    return {
+        type: ADD_RECIPE_COMMENT,
+        payload
+    }
+}
+
+export const editRecipeComment = (payload) => {
+    return {
+        type: EDIT_RECIPE_COMMENT,
+        payload
+    }
+}
+
+export const deleteRecipeComment = (payload) => {
+    return {
+        type: DELETE_RECIPE_COMMENT,
         payload
     }
 }

@@ -6,6 +6,8 @@ import React from 'react'
 
 // styles
 import './style.scss'
+import "./rootbg.scss"
+
 
 const PublicLayout = ({children}) => {
   return (

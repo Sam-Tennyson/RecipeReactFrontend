@@ -50,11 +50,7 @@ function ReactModal({
 						<Modal.Title >{title}</Modal.Title>
 					</Modal.Header>
 				) : null}
-
-				<Modal.Body>
-					{children}
-				</Modal.Body>
-
+				{children}
 			</Modal>
 
 
